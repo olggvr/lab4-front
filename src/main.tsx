@@ -1,10 +1,9 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout.tsx";
@@ -15,6 +14,7 @@ import Signup from "./signup/page.tsx";
 import store from "./store";
 import { Provider } from "react-redux";
 import Profile from "./profile/page.tsx";
+import CollectionPage from "./collections/page.tsx";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +41,10 @@ const router = createBrowserRouter([
                 path: "/profile",
                 element: <Profile />,
             },
+            {
+                path: "/collections",
+                element: <CollectionPage />,
+            }
         ],
     },
 ]);

@@ -40,6 +40,7 @@ const HomePage = () => {
                 <Typography variant="body1" gutterBottom>
                     React + Java EE
                 </Typography>
+
                 <Button
                     variant="contained"
                     color="primary"
@@ -48,6 +49,17 @@ const HomePage = () => {
                 >
                     Go to Dashboard
                 </Button>
+
+                <Container sx={{ overflow: "visible" }}>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    sx={{ mt: 2 }}
+                    onClick={() => navigate("/collections")}
+                >
+                    View Collection
+                </Button>
+                </Container>
             </Box>
         </Container>
     );
