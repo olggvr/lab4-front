@@ -10,12 +10,13 @@ const CollectionPage = () => {
     const [items, setItems] = useState<Item[]>([]);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
+    const offset = page*12
 
     useEffect(() => {
         const fetchItems = async () => {
             setLoading(true);
             try {
-                const response = await fetch(`https://harvardartmuseums.org/browse?q=&load_amount=12&offset=12`);
+                const response = await fetch(`https://harvardartmuseums.org/browse?q=&load_amount=12&offset=${offset}`);
                 const data = await response.json();
                 setItems((prev) => [...prev, ...data.records]);
             } catch (error) {
